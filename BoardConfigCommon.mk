@@ -23,9 +23,12 @@ LOCAL_PATH := device/samsung/trlte-common
 TARGET_CPU_VARIANT := krait
 
 # Audio
+BOARD_USES_LEGACY_ALSA_AUDIO:= true
 BOARD_USES_ALSA_AUDIO := true
 AUDIO_FEATURE_ENABLED_HWDEP_CAL := true
 BOARD_USES_ES705 := true
+TARGET_QCOM_MEDIA_VARIANT := caf
+BOARD_HAVE_SAMSUNG_AUDIO := true
 
 # Bluetooth
 BOARD_BLUEDROID_VENDOR_CONF := $(LOCAL_PATH)/bluetooth/vnd_trlte.txt
@@ -101,8 +104,9 @@ TARGET_POWERHAL_SET_INTERACTIVE_EXT := $(LOCAL_PATH)/power/power_ext.c
 TARGET_POWERHAL_VARIANT := qcom
 
 # Qualcomm support
-COMMON_GLOBAL_CFLAGS += -DQCOM_BSP
 TARGET_USES_QCOM_BSP := true
+BOARD_USES_QCOM_HARDWARE := true
+COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_BSP
 
 # Recovery
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/trlte-common/recovery/recovery_keys.c
