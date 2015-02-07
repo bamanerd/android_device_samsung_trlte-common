@@ -23,6 +23,7 @@ LOCAL_PATH := device/samsung/trlte-common
 TARGET_CPU_VARIANT := krait
 
 # Audio
+BOARD_USES_LEGACY_ALSA_AUDIO:= false
 BOARD_USES_ALSA_AUDIO := true
 AUDIO_FEATURE_ENABLED_HWDEP_CAL := true
 BOARD_USES_ES705 := true
